@@ -3,21 +3,25 @@ const rating = document.getElementById('userRating');
 const form = document.getElementById('rating-form');
 const thankYou = document.getElementById('thank-you');
 
+let selectedRating = null;
+
 form.addEventListener ('submit', (e) => {
     e.preventDefault();
 
-    form.classList.add('hidden');
-    thankYou.classList.remove('hidden');
+    if (selectedRating !== null) {
+        form.classList.add('hidden');
+        thankYou.classList.remove('hidden');
+        rating.textContent = selectedRating;
+    }
 });
 
-buttons.forEach(buttons => {
-    buttons.addEventListener('click', function() {
-        buttons.classList.toggle('active');
-        updateCount();
+buttons.forEach((button) => {
+    button.addEventListener('click', function() {
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        this.classList.add('active');
+
+        selectedRating = this.value;
+        console.log(this.value)
     });
 });
-
-function updateCount() {
-    const toggledButtons = document.querySelectorAll('.btn.active').length;
-    rating.textContent = `${toggledButtons}`;
-}
