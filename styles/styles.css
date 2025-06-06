@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --orange500: hsl(25, 97%, 53%);
+}
+
+body {
+  height: 100vh;
+  width: 23.438rem;
+}
+
+#rating-form {
+  background-color: var(--orange500);
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,14 @@
+@use "typography" as *;
+@use "layout" as *;
+
+:root {
+    --orange500: hsl(25, 97%, 53%);
+}
+
+body {
+    @include body;
+}
+
+#rating-form {
+    background-color: var(--orange500);
+}
